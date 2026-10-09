@@ -1,4 +1,4 @@
-com.longcheer.android.gmsintegration
+## com.longcheer.android.gmsintegration
 /system/operator-app/app/GmsSampleIntegration_full_telcel
 
 
@@ -32,3 +32,15 @@ Critical extensions
 Non-critical extensions
 - authorityKeyIdentifier: 04183016801497b6e1f1b2acdbda805c56b04e82d052833c8f7b
 - subjectKeyIdentifier: 0416041497b6e1f1b2acdbda805c56b04e82d052833c8f7b
+
+## /Wizard_script folder conect directly to (https://github.com/lexs201992-gif/Project-LION-Manager-Provisioning-Enterprise/tree/cc520a0e82ae86e232a42389fae4705b7b45e0dc/Smali/com.ape.setupwizard)
+
+
+# APE Setup Wizard Scripts (com.ape.setupwizard)
+
+**Location in repository:** `Smali/apesetupwizard/scripts/`
+
+**Evidence of Longcheer ODM supply-chain connection point**  
+This folder contains the decompiled / extracted wizard scripts and related artifacts from the privileged system application **com.ape.setupwizard** (APK name: `MotoSetupWizard.apk`).
+
+These scripts execute on **every first boot** of the device and **after every factory reset or Android Rescue Party** event. They represent a critical, manufacturer-signed entry point used by the ODM **Longcheer** to perform initial device provisioning, network configuration, account binding, Device Policy Manager (DPM) setup, and potential C2 beaconing / backdoor activation before the end-user reaches the home screen.
