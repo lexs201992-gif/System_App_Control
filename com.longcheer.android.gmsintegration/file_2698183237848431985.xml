@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:versionCode="34"
+  android:versionName="14"
+  android:compileSdkVersion="34"
+  android:compileSdkVersionCodename="14"
+  package="com.longcheer.android.gmsintegration"
+  platformBuildVersionCode="34"
+  platformBuildVersionName="14">
+  <uses-sdk
+    android:minSdkVersion="34"
+    android:targetSdkVersion="34">
+  </uses-sdk>
+  <application
+    android:label="@0x7f030000"
+    android:extractNativeLibs="false">
+    <receiver
+      android:name=".LauncherCustomizationReceiver"
+      android:exported="true">
+      <intent-filter>
+        <action
+          android:name="com.android.launcher3.action.PARTNER_CUSTOMIZATION">
+        </action>
+      </intent-filter>
+    </receiver>
+    <receiver
+      android:name=".SuwCustomizationReceiver"
+      android:exported="true">
+      <intent-filter>
+        <action
+          android:name="com.android.setupwizard.action.PARTNER_CUSTOMIZATION">
+        </action>
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>
