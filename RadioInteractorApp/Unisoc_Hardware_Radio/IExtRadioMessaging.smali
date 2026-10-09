@@ -1,0 +1,109 @@
+.class public interface abstract Lvendor/unisoc/hardware/radio/messaging/IExtRadioMessaging;
+.super Ljava/lang/Object;
+.source "IExtRadioMessaging.java"
+
+# interfaces
+.implements Landroid/os/IInterface;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lvendor/unisoc/hardware/radio/messaging/IExtRadioMessaging$Stub;,
+        Lvendor/unisoc/hardware/radio/messaging/IExtRadioMessaging$Default;
+    }
+.end annotation
+
+
+# static fields
+.field public static final DESCRIPTOR:Ljava/lang/String;
+
+.field public static final HASH:Ljava/lang/String; = "2120706b8828af75e8d1f6ab3a5655f40890b611"
+
+.field public static final VERSION:I = 0x1
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    const/16 v0, 0x24
+
+    const/16 v1, 0x2e
+
+    const-string v2, "vendor$unisoc$hardware$radio$messaging$IExtRadioMessaging"
+
+    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lvendor/unisoc/hardware/radio/messaging/IExtRadioMessaging;->DESCRIPTOR:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract getInterfaceHash()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getInterfaceVersion()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getSmsBearer(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getTPMRState(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract querySmsStorageMode(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract responseAcknowledgement()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setExtResponseFunctions(Lvendor/unisoc/hardware/radio/messaging/IExtRadioMessagingResponse;Lvendor/unisoc/hardware/radio/messaging/IExtRadioMessagingIndication;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract storeSmsToSim(IZ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
