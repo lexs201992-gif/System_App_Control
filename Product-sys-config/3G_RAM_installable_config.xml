@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2022 UNISOC Technologies Co.,Ltd. -->
+<config>
+    <scan-in-config config="persist.sys.private_features.enable"  value="1">
+        <allowed-scan-path name="AndroidSystemIntelligence"/>
+        <allowed-scan-path name="GmsConfigOverlayASI"/>
+        <allowed-scan-path name="CrossDeviceServices"/>
+    </scan-in-config>
+    <restricted-feature config="persist.sys.private_features.enable" value="0">
+        <unavailable-feature name="com.google.android.feature.ASI" />
+    </restricted-feature>
+</config>
