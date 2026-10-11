@@ -8,7 +8,16 @@
 
 ### Path
 `/system/system_ext/framework/unisoc-framework.jar` → `android/app/`
-
+`vfs://2063416765/android/app/AlarmManagerWrapper.smali
+vfs://2063416765/android/app/AppWatchdogImpl%24%24ExternalSyntheticLambda0.smali
+vfs://2063416765/android/app/AppWatchdogImpl.smali
+vfs://2063416765/android/app/LinkTurboApp%241.smali
+vfs://2063416765/android/app/LinkTurboApp%242.smali
+vfs://2063416765/android/app/LinkTurboApp.smali
+vfs://2063416765/android/app/UnisocApplicationErrorReportImpl.smali
+vfs://2063416765/android/app/UnisocDynamicDebugManagerImpl%24DynamicDebugControllerSingleton-IA.smali
+vfs://2063416765/android/app/UnisocDynamicDebugManagerImpl%24DynamicDebugControllerSingleton.smali
+vfs://2063416765/android/app/UnisocDynamicDebugManagerImpl.smali`
 ### What
 `AppWatchdogImpl` — a **non-invasive** main thread monitor. Unlike AOSP's
 `AppWatchdog` (which crashes the app), this one **only logs**. It detects when
