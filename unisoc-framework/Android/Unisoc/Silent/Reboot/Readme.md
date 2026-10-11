@@ -2,7 +2,11 @@
 
 ### Path
 `/system/system_ext/framework/unisoc-framework.jar` → `android/unisoc/silent/reboot/`
-
+`vfs://55383154/android/unisoc/silent/reboot/IUniSilentReboot%24Default.smali
+vfs://55383154/android/unisoc/silent/reboot/IUniSilentReboot%24Stub%24Proxy.smali
+vfs://55383154/android/unisoc/silent/reboot/IUniSilentReboot%24Stub.smali
+vfs://55383154/android/unisoc/silent/reboot/IUniSilentReboot.smali
+vfs://55383154/android/unisoc/silent/reboot/UniSilentRebootManager.smali`
 ### What
 AIDL interface for **unattended reboot** — the device reboots itself to apply FOTA
 without user interaction. The "party" (device) "rescues" itself into a new state
