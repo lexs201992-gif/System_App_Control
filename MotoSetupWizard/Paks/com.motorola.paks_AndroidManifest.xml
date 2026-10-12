@@ -1,0 +1,95 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="401071" android:versionName="04.01.071" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" package="com.motorola.paks" platformBuildVersionCode="34" platformBuildVersionName="14">
+    <uses-sdk android:minSdkVersion="31" android:targetSdkVersion="34"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="com.motorola.permission.ACCESS_PRODUCT_PERSIST"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE"/>
+    <uses-permission android:name="android.permission.DEVICE_POWER"/>
+    <uses-permission android:name="android.permission.MANAGE_USERS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.OEM_UNLOCK_STATE"/>
+    <uses-permission android:name="com.motorola.actions.provider.permission.READ_MODES"/>
+    <uses-permission android:name="com.motorola.actions.provider.permission.WRITE_MODES"/>
+    <uses-permission android:name="com.motorola.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="com.motorola.permission.PAKS_BIND_PERMISSION"/>
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.DELETE_PACKAGES"/>
+    <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS"/>
+    <uses-permission android:name="android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS"/>
+    <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <queries>
+        <package android:name="com.motorola.actions"/>
+    </queries>
+    <permission android:name="com.motorola.paks.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.motorola.paks.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <application android:theme="@0x7f10000b" android:label="@0x7f0f001c" android:name="com.motorola.paks.PaksApplication" android:allowClearUserData="false" android:allowBackup="false" android:extractNativeLibs="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <activity android:theme="@0x7f1001ec" android:name="com.motorola.paks.finance.FinancedSetupWizardActivity" android:exported="true" android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="com.motorola.paks.action.financed_setup"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.motorola.paks.PaksService" android:exported="false" android:singleUser="true" android:directBootAware="true"/>
+        <service android:name="com.motorola.paks.device.SetupCompleteService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true"/>
+        <service android:name="com.motorola.paks.remote.api.fcmtoken.PostFcmTokenJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true" android:directBootAware="true"/>
+        <service android:name="com.motorola.paks.remote.api.authentication.GetNonceJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true" android:directBootAware="true"/>
+        <service android:name="com.motorola.paks.remote.api.blockliststatus.GetBlocklistStatusJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true" android:directBootAware="true"/>
+        <service android:name="com.motorola.paks.remote.api.blocklistreport.PostBlocklistReportJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true" android:directBootAware="true"/>
+        <service android:name="com.motorola.paks.remote.api.financeenrollment.GetFinanceEnrollmentJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true"/>
+        <service android:name="com.motorola.paks.remote.api.financereport.PostFinanceReportJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true"/>
+        <service android:name="com.motorola.paks.remote.api.financeupgrade.PostFinanceUpgradeReportJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true"/>
+        <service android:name="com.motorola.paks.remote.api.financeupgrade.GetFinanceUpgradeJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true"/>
+        <service android:name="com.motorola.paks.remote.api.logreport.PostLogReportJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true"/>
+        <service android:name="com.motorola.paks.service.logreport.LogReportJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:singleUser="true"/>
+        <service android:name="com.motorola.paks.device.lock.PAKSLockServiceUI" android:exported="false" android:singleUser="true" android:directBootAware="true"/>
+        <service android:name="com.motorola.paks.remote.downloadapk.FinancedApkDownloadService" android:enabled="false" android:exported="false"/>
+        <service android:name="com.motorola.paks.remote.downloadapk.FinancedApkInstallService" android:enabled="false" android:exported="false"/>
+        <service android:name="com.motorola.paks.finance.FinancedAppService" android:exported="true"/>
+        <receiver android:name="com.motorola.paks.notification.PushNotificationReceiver" android:permission="com.motorola.paks.permission.PUSH_NOTIFICATION" android:exported="true" android:directBootAware="true">
+            <intent-filter>
+                <action android:name="com.motorola.paks.action.PUSH_NOTIFICATION"/>
+                <action android:name="com.motorola.paks.action.NOTIFICATION_REGISTER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.motorola.paks.device.event.BootCompletedReceiver" android:exported="true" android:directBootAware="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.motorola.paks.device.event.PreBootReceiver" android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.PRE_BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@0x7f0f001c" android:name="com.motorola.paks.device.PaksDeviceAdminReceiver" android:permission="android.permission.BIND_DEVICE_ADMIN" android:exported="true" android:description="@0x7f0f001c">
+            <meta-data android:name="android.app.device_admin" android:resource="@0x7f120000"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+                <action android:name="android.app.action.PROFILE_PROVISIONING_COMPLETE"/>
+                <action android:name="android.app.action.PROFILE_OWNER_CHANGED"/>
+                <action android:name="android.app.action.DEVICE_OWNER_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.motorola.paks.remote.downloadapk.FinancedApkDownloadReceiver" android:enabled="false" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@0x7f10028d" android:name="com.motorola.paks.hiddenmenu.ui.HiddenMenuActivity" android:exported="false"/>
+        <receiver android:name="com.motorola.paks.hiddenmenu.domain.HiddenMenuReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:scheme="android_secret_code" android:host="72576368"/>
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+    </application>
+</manifest>
