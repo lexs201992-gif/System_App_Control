@@ -1,0 +1,49 @@
+.class Lcom/ape/setupwizard/activity/MotoNavigation$3;
+.super Ljava/lang/Object;
+.source "MotoNavigation.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/ape/setupwizard/activity/MotoNavigation;->initView(I)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/ape/setupwizard/activity/MotoNavigation;
+
+
+# direct methods
+.method constructor <init>(Lcom/ape/setupwizard/activity/MotoNavigation;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/ape/setupwizard/activity/MotoNavigation$3;->this$0:Lcom/ape/setupwizard/activity/MotoNavigation;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .locals 1
+
+    iget-object p0, p0, Lcom/ape/setupwizard/activity/MotoNavigation$3;->this$0:Lcom/ape/setupwizard/activity/MotoNavigation;
+
+    const/4 p1, 0x1
+
+    const/16 v0, 0xb
+
+    invoke-static {p0, p1, v0}, Lcom/ape/setupwizard/activity/MotoNavigation;->access$100(Lcom/ape/setupwizard/activity/MotoNavigation;ZI)V
+
+    return-void
+.end method
