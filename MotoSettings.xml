@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings provider="content://com.motorola.gamemode.launcher.provider">
+
+    <version code="1">
+        <container id="game" key="gamecontainer" />
+    </version>
+
+    <version code="2">
+        <container id="game" key="gamecontainer">
+            <setting key="game">
+                <intent
+                    action="com.motorola.gamemode.ACTION_SETTINGS"
+                    category="android.intent.category.DEFAULT" />
+
+                <intent
+                    link_action="com.motorola.gamemode.ACTION_SETTINGS"
+                    category="android.intent.category.DEFAULT"/>
+            </setting>
+        </container>
+    </version>
+</settings>

@@ -1,0 +1,104 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: mRlQE+K+iUzMJsxfBRVwZJw+BPXhnWrujJVbyw0G2iU=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: Fr7ZlebFYdSQoiiKPREwdX2Pmj0sjm2cCvls3LaijRM=
+
+Name: classes.dex
+SHA-256-Digest: OkSYWbF612F4cFaO8Mfs5trbUFZ7XCyPMPD+6EzDnBk=
+
+Name: res/raw/portal_optional_actions.xml
+SHA-256-Digest: 6THCad+DjLCPJrDKJYXaOOUjx2ESSXZ7vBvFbJ7a+20=
+
+Name: res/raw/suggested_actions.xml
+SHA-256-Digest: 3BuhJn+g/cokSlH2GmywnNTwpN4jo2YFy7C9Rp+9XWM=
+
+Name: res/raw/wizard_script.xml
+SHA-256-Digest: +tOR+hHFFUwI1ZVLvEdZfoD3ldpxNJDaLRcowo4/Tjk=
+
+Name: res/raw/wizard_script_account_flow.xml
+SHA-256-Digest: usdGL6NoGogAeGJ0LIJIOk5Gr6ffoUuOKUhypaV43GA=
+
+Name: res/raw/wizard_script_common_flow.xml
+SHA-256-Digest: AhioRSPrJJHlKAyzuQETft1nuUr4lwIS34CwQ2R8quk=
+
+Name: res/raw/wizard_script_common_personalization_flow.xml
+SHA-256-Digest: O3sufk5qoYFUZF4hL40veH1nQjsMylPCx2d3AqFlP9w=
+
+Name: res/raw/wizard_script_connect_and_update_flow.xml
+SHA-256-Digest: FcsUPZXWNdPWighIgs/SimiizjLBm/LV5ZBwORMNMlo=
+
+Name: res/raw/wizard_script_deferred.xml
+SHA-256-Digest: PLYXJJE5PNK0Zp4PJN+FvgH8UjwmzZN5OEGqpJzlw/0=
+
+Name: res/raw/wizard_script_finish_cloud_restore_flow.xml
+SHA-256-Digest: arz9vxY8y2mqtgyCE4u0a7RoOeQ4W1bDRACduMuwQ+4=
+
+Name: res/raw/wizard_script_nfc_provision_flow.xml
+SHA-256-Digest: rUxJOhprnGiQXF5+80zVVEjUVo4rohSNdExO72DGcZ4=
+
+Name: res/raw/wizard_script_no_account_flow.xml
+SHA-256-Digest: tPBDjC7W+luAnXE5tMSMEuyaBVrG74PEl6MrD1Rn6oY=
+
+Name: res/raw/wizard_script_no_network_flow.xml
+SHA-256-Digest: kLwZcLnyQzOCghjBZaQ4gtT2S5vT+OBH0VUw49QLn98=
+
+Name: res/raw/wizard_script_post_account_flow.xml
+SHA-256-Digest: c370Q/PpuNyY0slZnVrhhCyEKO+bd7kFhsE5WJ8e1Ow=
+
+Name: res/raw/wizard_script_post_dpm_provision_finalization_flow.xml
+SHA-256-Digest: QrX1RZUT9/FIVqPFL7tDRIjYmdd5NIOupw7h0nq5U/k=
+
+Name: res/raw/wizard_script_post_dpm_user_flow.xml
+SHA-256-Digest: 16gxDHWrhJKmrMG4/WUQTaZNqKCyzpLt+xoML2hHzjc=
+
+Name: res/raw/wizard_script_post_managed_provisioning.xml
+SHA-256-Digest: N4c86/4hZ23sFXU5DXX09NAlUawzwn7RTdS44aSisBM=
+
+Name: res/raw/wizard_script_pre_deferred.xml
+SHA-256-Digest: Q0fprqpGKghRxiCDtw/ZDGVONDh6vIBDVwuzs4nxmKM=
+
+Name: res/raw/wizard_script_qr_provision_flow.xml
+SHA-256-Digest: brDqU0SrHo2vJosZwf4YlNDJBbnOgAKgvh4sjuVRuTo=
+
+Name: res/raw/wizard_script_quick_start_flow.xml
+SHA-256-Digest: 52Hj9K0NfHAHXkoEkMOMk/0FJp1IZDn5srtph+4YqgI=
+
+Name: res/raw/wizard_script_quick_start_restore_flow.xml
+SHA-256-Digest: qiof45Aq/u6yoA9Y1Wu4NfjJh15S0iSc3qHNKptaH/4=
+
+Name: res/raw/wizard_script_quick_start_transfer_account_flow.xml
+SHA-256-Digest: PnI7fMoxG5N7koMlQtG+ODPAPMGfg8sZ9YsPx0zg04U=
+
+Name: res/raw/wizard_script_quick_start_zero_touch_flow.xml
+SHA-256-Digest: PUNjqmpU4VYHjDJV955ELUmPlTCw+sGMJG8hEHMLW18=
+
+Name: res/raw/wizard_script_rollback_auth_early_update_flow.xml
+SHA-256-Digest: Xfsr2FAn5qCJIsY7Fgsf4j3gbcvtDmKEiftb8WNrEi4=
+
+Name: res/raw/wizard_script_sim_setup_flow.xml
+SHA-256-Digest: 8fKlwiN2B9eVxSa9r1A8DgZdTtf0eE66flQEaxACSkc=
+
+Name: res/raw/wizard_script_start_cloud_restore_flow.xml
+SHA-256-Digest: E55FKb0+FV0HC7+ahi2JSqBgFMIUXMRzqebW/xb5l+s=
+
+Name: res/raw/wizard_script_unified_restore_flow.xml
+SHA-256-Digest: U/X24FmROGCYmfVV096HynjBbvYPDNrdWMru5jUCT1o=
+
+Name: res/raw/wizard_script_user.xml
+SHA-256-Digest: V14wsWZSioYt2wpzthlY58nUmycECfNaXaD9AZk3IeI=
+
+Name: res/raw/wizard_script_user_account_flow.xml
+SHA-256-Digest: qvEFb1/tlqJa7VxHWqUW0kngDHgbTEyigyO2k1vetgo=
+
+Name: res/raw/wizard_script_zero_touch_flow.xml
+SHA-256-Digest: 87hfz7pR3azec8Gz/il+iMW0RWn8l936+ZJsMZlB7Hk=
+
+Name: res/xml/partner_default_layout.xml
+SHA-256-Digest: bdR5KCl+ar/FSpbyFI9Dl1DtB1ToWj4oUnV6/M6cCMU=
+
+Name: resources.arsc
+SHA-256-Digest: 8/961BcZAQtsieD0k840djlTCcfU9UHM1EQJXuQa8NQ=
+

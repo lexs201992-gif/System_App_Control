@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<array
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Tag usage description:
+        1) suw:lifecycle, makes the component shown on the specific lifecycle of the Suw.
+            The value can be default or deferred. If no set, the component will be shown
+            for both initial and deferred.
+        2) android:isRepeatable, means the component can be implemented for different implementers.
+            The value can be true or false. If no set, only the implementer with the
+            highest priority will be shown.
+     -->
+
+    <action android:category="com.android.settings.suggested.category.EMAIL"
+            android:isRepeatable="true" />
+
+    <!-- Increase font-size, display size etc -->
+    <action android:category="com.android.settings.suggested.category.DISPLAY_SETTINGS"
+            android:isRepeatable="true" />
+
+    <!-- For things like change wallpaper -->
+    <action android:category="com.android.settings.suggested.category.PERSONALIZE"
+            android:isRepeatable="true" />
+
+    <action android:category="com.android.settings.suggested.category.PAI" />
+
+    <action android:category="com.android.settings.suggested.category.LOCK_SCREEN_REDACTION"
+            android:isRepeatable="true" />
+
+    <!-- Action to enroll more fingerprints, even if existing lock screen is set -->
+    <action android:category="com.android.settings.suggested.category.FINGERPRINT_ENROLL"
+            android:isRepeatable="true" />
+
+</array>
