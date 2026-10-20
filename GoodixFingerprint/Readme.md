@@ -313,7 +313,33 @@ The 32-byte `mVendorData` field is controlled by the sensor manufacturer. If a s
 
 **Integrity note:** `bootclasspath-checksums: i;17/12d58656:i;24/e491c7d5` — if any bootclasspath jar is modified without regenerating the ODEx, ART will reject the verification stamp and re-verify the DEX. This is a passive integrity check, not a prevention mechanism.   
 
+### Internal Configuration (`res/xml/internal_test.xml`)
+
+The factory test APK includes a full configuration UI (`PreferenceScreen`) that exposes **runtime control** over the daemon's security parameters:
+
+| Key | Exposes | Risk |
+|-----|---------|------|
+| `key_safe_class` | `setSafeClass(int)` — security level | **CRITICAL** — if accessible via exported activity, security verification can be downgraded |
+| `key_fw_cfg_download` → `DownloadFwCfgTestActivity` | **Firmware flash to sensor chip** | **CRITICAL** — supply-chain: modified firmware can be pushed to the MoC sensor |
+| `key_dump_config` → `DumpFunctionalTestActivity` | `dumpCmd()` data extraction | **HIGH** — second data exfiltration path |
+| `key_forbidden_untrusted_enroll` | Disable enrollment restriction | **HIGH** — if OFF, any app can enroll fingerprints |
+| `key_support_bio_assay` | Liveness detection toggle | **MEDIUM** — if OFF, spoofing with fake fingers is possible |
+| `key_support_set_spi_speed_in_tee` | SPI speed in TEE | **LOW** — confirms TEE communication exists |
+| `key_bad_point_*` (×9) | QA thresholds (same as `MilanHVSeriesChecker`) | **INFO** — confirms factory test logic |
+
+### Memory Security (`res/xml/memory_setting.xml`)
+
+| Key | Function |
+|-----|----------|
+| `erase_mem_pool_when_free` | Zero-fill memory pools on release (prevents residual biometric data in RAM) |
+| `mem_debug_enable` | Memory debugging (should be OFF in production) |
+| `mem_manager_pool_size` | Pool allocation size |
+
+**Note:** If `erase_mem_pool_when_free` is disabled in the shipped build, raw fingerprint images and template data persist in process memory after use, accessible via `/proc/<pid>/mem` or debugger attach.   
+
+
 ## Recommended Next Steps
+
 
 | # | Action | Method |
 |---|--------|--------|
