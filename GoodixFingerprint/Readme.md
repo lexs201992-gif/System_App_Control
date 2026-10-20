@@ -292,6 +292,27 @@ The 32-byte `mVendorData` field is controlled by the sensor manufacturer. If a s
 
 ---
 
+## ODEx / VDEx Analysis
+
+| Field | Value | Forensic Significance |
+|-------|-------|----------------------|
+| `compilation-reason` | `prebuilt` | Compiled at Longcheer factory (Jenkins, `sh-16-52.rnd.longcheer.net`), not on-device |
+| `compiler-filter` | `verify` | **No AOT code** — all logic in `classes.dex`. ODEx/VDEx are verification stamps only |
+| `debuggable` | `false` | Production build confirmed |
+| `classpath` | `PCL[]` | No additional classpath — self-contained APK |
+| `apex-versions` | empty | No APEX dependencies |
+
+**Bootclasspath (system jars accessible to this app):**
+- `radio_interactor_common.jar` — Radio control layer (see [RadioInteractorApp](../RadioInteractorApp/))
+- `unisoc_ims_common.jar` — Unisoc IMS
+- `unisoc-framework.jar` — Unisoc extension (SensorInfoStream, FingerprintEngineering)
+- `unipnp-framework.jar` — Unisoc PnP
+- `framework-moto-enterprise.jar` — Motorola enterprise
+
+**Key finding:** The `verify` filter means the ODEx contains **no executable code**. All forensic analysis of the Java layer is fully covered by the smali in `Smali/`. The native attack surface is exclusively in `vendor/bin/goodix_fingerprint_daemon` (not present in this APK).
+
+**Integrity note:** `bootclasspath-checksums: i;17/12d58656:i;24/e491c7d5` — if any bootclasspath jar is modified without regenerating the ODEx, ART will reject the verification stamp and re-verify the DEX. This is a passive integrity check, not a prevention mechanism.   
+
 ## Recommended Next Steps
 
 | # | Action | Method |
