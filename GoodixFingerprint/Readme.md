@@ -191,6 +191,42 @@ The proxy layer (`com.goodix.fingerprint.proxy`) is a **trivial wrapper** that t
 | `enableFingerprintModule(false)` | **MEDIUM** | Disables entire fingerprint subsystem. Could prevent user from detecting absence of biometric functionality. |
 | `navigate(int)` | **LOW** | Gesture navigation mode. No direct security risk but confirms sensor dual-use (biometric + input). |
 
+### Template Extraction (Confirmed via Resource Strings)
+
+The `resources.arsc` contains explicit UI strings confirming **template dump capability**:
+
+| String | Implication |
+|--------|-------------|
+| `Dump templates` | UI button to extract fingerprint templates from TEE |
+| `Dump all data` | Bulk data extraction |
+| `Dump Encrypt` | Encrypted dump option |
+| `Record template` / `Record template num` | Template recording during enroll |
+| `TA source code` / `TEE version:` | **TEE (TrustZone Application) component confirmed** |
+| `SPI speed change in REE/TEE` | SPI communication between REE and TEE |
+
+**Architecture correction:** The sensor is **not purely MoC**. There is a **TA (TrustZone Application)** in the TEE that stores templates and manages security. The MoC sensor handles fast matching, but the templates live in TEE NVM. `cameraCapture()` extracts raw images; `Dump templates` extracts **the actual biometric templates** — the higher-value target.
+
+### Firmware on External Storage
+
+```
+FW is storaged in /sdcard/fw
+config is storaged in /sdcard/cfg
+```
+
+Sensor firmware and configuration are stored on **external storage** (`/sdcard/`). Combined with `DownloadFwCfgTestActivity`, this means:
+- Firmware can be replaced without root (if the activity is reachable)
+- No visible firmware signature verification in the resource strings
+- A modified firmware in `/sdcard/fw` would be loaded on next sensor initialization
+
+### Full Activity Inventory (from layouts)
+
+26 activities identified in `res/layout/`. Key security-relevant ones:
+- `activity_download_fw_cfg.xml` — **Firmware flash**
+- `activity_dump.xml` — **Data/template dump**
+- `activity_untrusted_fingerprint.xml` — **Untrusted auth/enroll (bypasses framework)**
+- `activity_frr_database.xml` — FRR/FAR test database
+- `activity_performance_test.xml` — SPI timing (anomaly detection)
+```
 ---
 
 ## OTP / Hardware Identity (Unisoc Extension Layer)
