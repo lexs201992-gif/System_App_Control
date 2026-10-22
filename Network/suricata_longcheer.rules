@@ -1,0 +1,2 @@
+alert ip fd00:2:fd00:1::/64 any -> 2620:fe::9:853 (msg:"DTI Phoenix ULA Covert DoT Quad9 Blocked"; sid:20261021;)
+alert tcp fd00:2:fd00:1::/64 any -> [2a03:2880::/32,57.144.0.0/16] [5222,3478,443] (msg:"Longcheer Fallback Facebook STUN/XMPP - Plan B"; sid:20261022;)
