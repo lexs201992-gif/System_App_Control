@@ -1,3 +1,19 @@
+# Network - Covert Control Plane Live PCAP
+Config: ipv4/6 quad9 853 los dialers spliters usan 443 udp si les bloqueas quic mueren
+Device: Moto G04s XT2421-7 Unisoc T606 Longcheer ULA34.89-209-4
+Tool: PCAPdroid 2.0.2 DNS 9.9.9.9 / 2620:fe::9:853 Block Private DNS ON Block QUIC Always
+
+## Report
+Bytes sent: 3.9 MB Bytes received: 39.5 MB IPv6 bytes sent: 3.0 MB IPv6 bytes received: 38.0 MB IPv6 bytes percentage: 94% Packets sent: 12.3 K Packets received: 16.2 K Active connections: 12 Dropped connections: 0 Total connections: 365 DNS server: 9.9.9.9 DNS queries: 253
+
+## infra - ULA -> Quad9/Google DoT blocked + Facebook STUN Fallback
+[W] 21/Oct/2026 19:32:35 - [UDP6] fd00:2:fd00:1:fd00:1:fd00:1:47049 -> 2620:fe:9:853:53 net/host unreachable
+[W] 21/Oct/2026 19:32:35 - [UDP6] fd00:2:fd00:1:fd00:1:fd00:1:19175 -> 2620:fe:9:853:53
+...
+[TCP6] fd00:2:fd00:1:fd00:1:fd00:1:35214 -> 2a03:2880:f38a:8:face:b00c:0:38d9:5222 UID not found!
+[TCP4] 10.215.173.1:55260 -> 57.144.79.54:3478 UID not found!
+
+
 ## Report
 Bytes sent: 3.9 MB
 Bytes received: 39.5 MB
